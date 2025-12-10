@@ -1,0 +1,151 @@
+/* 
+    min-width: 00.00em -> col-sm
+    min-width: 48.75em -> col-md 
+    min-width: 56.25em -> col-lg
+    min-width: 74.00em -> col-xl
+*/
+
+/* 
+    0
+    min-width: 00.00em -> col-s,
+*/
+
+/* 
+    780 / 16 
+    min-width: 48.75em -> col-md
+*/
+
+:root {
+  --default-gap: 1rem;
+}
+
+@media screen and (min-width: 48.75em) {
+  .top_header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top_header_logo {
+    margin-left: 1.5em;
+  }
+
+  .top_header_nav {
+    /* usei muito pouco do Initial, mas ele retorna para o valor padrão. Pode se aplicar em qualquer propriedade */
+    background-color: initial;
+  }
+
+  .top_header_nav li {
+    display: inline-block;
+  }
+
+  .top_header_nav a {
+    color: var(--primary-color);
+    transition: all 0.7s ease;
+    font-weight: 500;
+  }
+
+  .top_header_nav a:hover {
+    background-color: initial;
+    color: var(--primary-color-tint);
+  }
+
+  .heroBanner {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .heroBanner_title,
+  .heroBanner_subtitle {
+    color: white;
+  }
+
+  .heroBanner_iconPlay {
+    display: block;
+    margin: auto;
+  }
+
+  .col-md-6 {
+    width: calc(50% - var(--default-gap));
+    /* background-color: grey; */
+  }
+}
+
+/* 
+    900 / 16 
+    min-width: 56.25em -> col-lg
+*/
+@media screen and (min-width: 56.25em) {
+  .heroBanner {
+    background-position: top;
+    background-color: var(--primary-color);
+    background-repeat: no-repeat;
+    background-image: url("/images/bg_topo_1198x670.jpg");
+    /* pega um elemento HTML e aumenta / diminui numa mesma proporção
+    aspect-ratio: largura / altura; */
+    aspect-ratio: 1198 / 670;
+    display: flex;
+    align-items: flex-end;
+
+    justify-content: center;
+  }
+
+  .heroBanner .maxWidth {
+    margin: initial;
+    width: 75%;
+    margin-bottom: 4em;
+  }
+}
+
+/* 
+    1184 / 16 
+    min-width: 74.00em -> col-xl
+*/
+@media screen and (min-width: 74em) {
+  .heroBanner {
+    background: linear-gradient(to top, transparent 25%, var(--primary-color)),
+      url("/images/bg_topo_1600x1374.jpg");
+    background-position: top;
+    background-color: var(--primary-color);
+    background-repeat: no-repeat;
+    max-height: 80vh;
+    width: 100%;
+  }
+
+  .heroBanner .maxWidth {
+    width: 50%;
+  }
+
+  .heroBanner_iconPlay {
+    width: 7em;
+    height: 7em;
+  }
+
+  .col-xl-3 {
+    width: calc(25% - var(--default-gap));
+  }
+
+  .col-xl-6 {
+    width: calc(50% - var(--default-gap));
+  }
+}
+
+.mainContent .row {
+  container: main-content / inline-size;
+}
+
+/* container query */
+@container main-content (min-width: 31.25em) {
+  .mainContent_container {
+    display: flex;
+    gap: var(--default-gap);
+  }
+
+  .mainContent_title {
+    margin-top: 0;
+  }
+
+  .mainContent_img img {
+    max-height: 182px;
+  }
+}
+

@@ -1,0 +1,180 @@
+/* mobile-first. Há quatro configurações de tela */
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #612674;
+  --primary-color-shade: #90679e;
+  --primary-color-tint: #31133a;
+  --off-white: #f6f6f6;
+
+  --default-gap: 1rem;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Oxygen", sans-serif;
+}
+
+/* 1124px / 16px */
+.maxWidth {
+  max-width: 70.25em;
+  margin: 0 auto;
+}
+
+.top_header {
+  text-align: center;
+}
+
+.top_header_nav {
+  background-color: var(--primary-color);
+}
+
+.top_header_nav ul {
+  list-style-type: none;
+  padding: 0;
+  /* foi inserido margin-bottom pois havia um espaço em branco. Zeramos para aproximar */
+  margin-bottom: 0;
+}
+
+/* em caso de lista, o padding é muito mais interessante dentro da tag a */
+.top_header_nav a {
+  text-decoration: none;
+  color: white;
+  padding: 1em;
+  display: block;
+  transition: all 0.7s ease;
+}
+
+.top_header_nav a:hover {
+  background-color: var(--primary-color-shade);
+}
+
+.heroBanner {
+  text-align: center;
+  background-color: var(--off-white);
+  padding: 1em;
+}
+
+.heroBanner_iconPlay {
+  height: 5em;
+  width: 5em;
+  display: none;
+}
+
+.heroBanner_iconPlay img {
+  height: 5em;
+}
+
+.heroBanner_title {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin: 1.5em 0;
+}
+
+.heroBanner_subtitle {
+  font-size: 1em;
+  color: var(--primary-color-shade);
+  line-height: 1.5;
+}
+
+/* .heroBanner_title,
+.heroBanner_subtitle {
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+} */
+
+.heroBanner_btn {
+  display: inline-block;
+  padding: 0.9em 2.5em;
+  background-color: #58c4c4;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+/* determinar o sistema de breaking points do grid */
+.middleContent {
+  background-color: var(--off-white);
+  text-align: center;
+  padding: 2em;
+}
+.middleContent_title {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+.middleContent a {
+  text-decoration: none;
+  /* herda o valor do pai */
+  color: inherit;
+}
+
+/* todo span com classe que se inicia com "icon-" dentro de .middleContent */
+.middleContent span[class^="icon-"] {
+  color: var(--primary-color);
+  font-size: 3.5em;
+}
+
+.middleContent p {
+  line-height: 1.5;
+}
+
+.row {
+  /* o padrão sem declarar a direction é row */
+  display: flex;
+  /* dependendo do tamanho da coluna, queremos que a linha quebre de forma automática */
+  flex-wrap: wrap;
+  gap: var(--default-gap);
+  /* outline: 1px solid red; */
+}
+
+.col {
+  /* flex: 
+  grow (cresce se tiver espaço sobrando) 
+  shrink (não queremos que o elemento diminua) 
+  basis (depende do width do próprio elemento); */
+  flex: 1 0 auto;
+  width: 100%;
+  /* outline: 1px solid blue; */
+}
+
+.col-sm-12 {
+  width: 100%;
+}
+
+.mainContent {
+  padding: 2em;
+}
+
+.mainContent p {
+  line-height: 1.2;
+}
+
+.mainContent_title {
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  font-size: 1.25em;
+}
+
+.mainContent .row {
+  row-gap: 4em;
+}
+
+.mainContent_img img {
+  width: 100%;
+}
+
+footer {
+    background: #25303e;
+    color: #83969f;
+    text-align: center;
+    padding: 2em;
+}
